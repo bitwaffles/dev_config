@@ -1,0 +1,8 @@
+neovim
+tmux
+git
+ripgrep
+fd-find
+nodejs
+npm
+build-essential

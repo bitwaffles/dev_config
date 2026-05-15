@@ -1,0 +1,7 @@
+brew "neovim"
+brew "tmux"
+brew "git"
+brew "ripgrep"
+brew "fd"
+brew "node"
+cask "ghostty"
