@@ -29,6 +29,7 @@ vim.pack.add {
     { src = "https://github.com/sindrets/diffview.nvim" },
     { src = "https://github.com/NeogitOrg/neogit" },
     { src = "https://github.com/folke/lazydev.nvim" },
+    { src = "https://github.com/coder/claudecode.nvim" },
 }
 
 -- ─── colorscheme ──────────────────────────────────────────────────────────
@@ -57,7 +58,16 @@ require('blink.cmp').setup({
         preset = 'enter',
         ['<Tab>'] = { 'select_next', 'fallback' },
         ['<S-Tab>'] = { 'select_prev', 'fallback' },
+        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
     },
+    completion = {
+        documentation = {
+            auto_show = true,
+            auto_show_delay_ms = 200,
+        },
+    },
+    signature = { enabled = true },
 })
 
 -- ─── file tree ────────────────────────────────────────────────────────────
@@ -111,6 +121,7 @@ require('gitsigns').setup({
 
 require('diffview').setup()
 require('neogit').setup({})
+require('claudecode').setup()
 
 
 -- ─── diagnostics ──────────────────────────────────────────────────────────
@@ -166,6 +177,18 @@ map('n', '<leader>gb', gs.blame_line, { desc = 'Blame line' })
 map('n', '<leader>gd', gs.diffthis, { desc = 'Diff this' })
 map('n', '<leader>gt', gs.toggle_current_line_blame, { desc = 'Toggle line blame' })
 map('n', '<leader>gg', '<cmd>Neogit<CR>', { desc = 'Neogit' })
+
+-- claude code
+map('n', '<leader>ac', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude' })
+map('n', '<leader>af', '<cmd>ClaudeCodeFocus<CR>', { desc = 'Focus Claude' })
+map('n', '<leader>ar', '<cmd>ClaudeCode --resume<CR>', { desc = 'Resume Claude' })
+map('n', '<leader>aC', '<cmd>ClaudeCode --continue<CR>', { desc = 'Continue Claude' })
+map('n', '<leader>ab', '<cmd>ClaudeCodeAdd %<CR>', { desc = 'Add current buffer' })
+map('v', '<leader>as', '<cmd>ClaudeCodeSend<CR>', { desc = 'Send selection to Claude' })
+map('t', '<C-h>', '<C-\\><C-n><C-w>h', { desc = 'Terminal: go left' })
+map('t', '<C-l>', '<C-\\><C-n><C-w>l', { desc = 'Terminal: go right' })
+map('n', '<leader>aa','<cmd>ClaudeCodeDiffAccept<CR>', { desc = 'Accept diff' })
+map('n', '<leader>ad', '<cmd>ClaudeCodeDiffDeny<CR>', { desc = 'Deny diff' })
 
 -- telescope
 map('n', '<leader>sf', tb.find_files, { desc = 'Find files' })
