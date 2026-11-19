@@ -187,6 +187,7 @@ map('n', '<leader>ab', '<cmd>ClaudeCodeAdd %<CR>', { desc = 'Add current buffer'
 map('v', '<leader>as', '<cmd>ClaudeCodeSend<CR>', { desc = 'Send selection to Claude' })
 map('t', '<C-h>', '<C-\\><C-n><C-w>h', { desc = 'Terminal: go left' })
 map('t', '<C-l>', '<C-\\><C-n><C-w>l', { desc = 'Terminal: go right' })
+map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 map('n', '<leader>aa','<cmd>ClaudeCodeDiffAccept<CR>', { desc = 'Accept diff' })
 map('n', '<leader>ad', '<cmd>ClaudeCodeDiffDeny<CR>', { desc = 'Deny diff' })
 
