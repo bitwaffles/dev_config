@@ -183,6 +183,8 @@ map('t', '<C-h>', '<C-\\><C-n><C-w>h', { desc = 'Terminal: go left' })
 map('t', '<C-l>', '<C-\\><C-n><C-w>l', { desc = 'Terminal: go right' })
 map('n', '<leader><leader>c', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude' })
 map('t', '<leader><leader>c', '<C-\\><C-n><cmd>ClaudeCode<CR>', { desc = 'Toggle Claude from terminal mode' })
+map('t', '<leader><leader>e', '<C-\\><C-n><C-w>p', { desc = 'Terminal: back to previous window (editor)' })
+map('n', '<leader><leader>e', '<cmd>ClaudeCodeFocus<CR>', { desc = 'Focus Claude from editor' })
 
 -- telescope
 map('n', '<leader>sf', tb.find_files, { desc = 'Find files' })
