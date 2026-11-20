@@ -179,17 +179,10 @@ map('n', '<leader>gt', gs.toggle_current_line_blame, { desc = 'Toggle line blame
 map('n', '<leader>gg', '<cmd>Neogit<CR>', { desc = 'Neogit' })
 
 -- claude code
-map('n', '<leader>ac', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude' })
-map('n', '<leader>af', '<cmd>ClaudeCodeFocus<CR>', { desc = 'Focus Claude' })
-map('n', '<leader>ar', '<cmd>ClaudeCode --resume<CR>', { desc = 'Resume Claude' })
-map('n', '<leader>aC', '<cmd>ClaudeCode --continue<CR>', { desc = 'Continue Claude' })
-map('n', '<leader>ab', '<cmd>ClaudeCodeAdd %<CR>', { desc = 'Add current buffer' })
-map('v', '<leader>as', '<cmd>ClaudeCodeSend<CR>', { desc = 'Send selection to Claude' })
 map('t', '<C-h>', '<C-\\><C-n><C-w>h', { desc = 'Terminal: go left' })
 map('t', '<C-l>', '<C-\\><C-n><C-w>l', { desc = 'Terminal: go right' })
-map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-map('n', '<leader>aa','<cmd>ClaudeCodeDiffAccept<CR>', { desc = 'Accept diff' })
-map('n', '<leader>ad', '<cmd>ClaudeCodeDiffDeny<CR>', { desc = 'Deny diff' })
+map('n', '<leader><leader>c', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude' })
+map('t', '<leader><leader>c', '<C-\\><C-n><cmd>ClaudeCode<CR>', { desc = 'Toggle Claude from terminal mode' })
 
 -- telescope
 map('n', '<leader>sf', tb.find_files, { desc = 'Find files' })
